@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body font and background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e8ff;
+}
+/* Header layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+}
+/* Navigation links */
+nav a {
+    margin: 0 15px;
+    color: #555;
+    text-decoration: none;
+}
+
+nav .phone {
+    margin-left: 20px;
+    font-weight: bold;
+    color: #555;
+}
+/* Button styles */
+button.sign-in,
+button.sign-up {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Sign-in button */
+button.sign-in {
+    color: #000;
+    margin-right: 15px;
+}
+
+button.sign-up {
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    color: #6b20b1;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+/* Get Started button */
+button.get-started {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+button.get-started:hover {
+    background-color: #ff00ff;
+    color: #fff;
+}
+/* Hero image size */
+.hero-image {
+    width: 150px;
+    margin-top: 20px;
+}
