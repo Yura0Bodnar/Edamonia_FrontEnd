@@ -22,6 +22,7 @@ header {
     position: sticky; /* Keeps the header fixed at the top */
     top: 0;
     z-index: 1000;
+
 }
 
 /* Logo styling */
@@ -40,6 +41,7 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease, color 0.3s ease;
+    font-style: italic;
 }
 
 /* Hover effect for navigation links */
@@ -82,56 +84,53 @@ nav a:hover {
     flex: 1;
     max-width: 480px;
     margin-right: 20px;
-    box-shadow: 0px 10px 20px rgba(100, 15, 189, 0.2); /* Adds a shadow to the image */
+    box-shadow: 0px 10px 20px rgba(200, 15, 189, 0.2); /* Adds a shadow to the image */
     border-radius: 15px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect for hero image */
 .hero-image:hover {
-    box-shadow: 0px 15px 25px rgba(100, 15, 189, 0.3);
+    box-shadow: 0px 15px 25px rgba(150, 20, 189, 0.4);
     transform: scale(1.05);
 }
 
-/* Hero content layout */
 .hero-content {
     flex: 1;
-    text-align: left; /* Aligns text to the left */
+    text-align: center; /* Центрування тексту */
     color: #333;
-    max-width: 600px; /* Sets maximum width for the text block */
-    padding: 20px; /* Adds padding for visual spacing */
+    max-width: 600px; /* Максимальна ширина для текстового блоку */
+    padding: 20px;
+    margin: auto; /* Центрування секції */
 }
 
-/* Hero main heading styling */
 .hero-content h1 {
-    font-size: 3.2em; /* Increases the font size of the main heading */
+    font-size: 3.2em;
     font-weight: 700;
     color: #333;
-    margin-bottom: 20px; /* Adds space below the heading */
-    line-height: 1.2; /* Adjusts line height for readability */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Adds a soft shadow to the heading */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for highlighted part of the heading */
 .hero-content h1 span {
     color: #640fbd;
     font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(100, 15, 189, 0.3); /* More intense shadow for emphasis */
+    text-shadow: 2px 2px 6px rgba(100, 15, 189, 0.3);
 }
 
-/* Hero subtitle paragraph styling */
 .hero-content p {
-    font-size: 1.3em; /* Increases font size of the subtitle */
+    font-size: 1.3em;
     font-weight: 300;
     font-style: italic;
     color: #555;
-    line-height: 1.5; /* Adjusts line height for better readability */
-    margin-bottom: 30px; /* Adds space below the paragraph */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Soft shadow for the text */
-    letter-spacing: 0.5px; /* Adds spacing between letters for a refined look */
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
 }
 
-/* Get Started button styling */
+/* Get Started button */
 button.get-started {
     background-color: #640fbd;
     color: #fff;
@@ -139,15 +138,16 @@ button.get-started {
     font-size: 1.1em;
     font-weight: bold;
     border-radius: 30px;
-    box-shadow: 0 8px 15px rgba(100, 15, 189, 0.3); /* Shadow for button depth */
+    box-shadow: 0 8px 15px rgba(100, 15, 189, 0.3);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Відступ зверху для кнопки */
 }
 
 /* Hover effect for Get Started button */
 button.get-started:hover {
     background-color: #520ca1;
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(100, 15, 189, 0.4); /* Shadow effect on hover */
+    box-shadow: 0 10px 20px rgba(100, 15, 189, 0.4);
 }
