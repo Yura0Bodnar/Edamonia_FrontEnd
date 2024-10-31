@@ -25,38 +25,33 @@ header {
     font-weight: bold;
     color: #555;
 }
-/* Navigation links */
 nav a {
     margin: 0 15px;
     color: #555;
     text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-nav .phone {
-    margin-left: 20px;
-    font-weight: bold;
-    color: #555;
-}
-/* Button styles */
-button.sign-in,
-button.sign-up {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-/* Sign-in button */
-button.sign-in {
-    color: #000;
-    margin-right: 15px;
+nav a:hover {
+    color: #640fbd;
+    transform: scale(1.1);
 }
 
-button.sign-up {
-    background-color: #ff00ff;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
+/* Стилізація кнопки AI bot */
+.ai-bot-button {
+    color: #640fbd;
     font-weight: bold;
+    transition: all 0.3s ease; /* Плавний перехід */
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+/* Додаткові стилі при наведенні */
+.ai-bot-button:hover {
+    border-radius: 10px;
+    background-color: #640fbd; /* Зміна фону при наведенні */
+    color: #ffffff; /* Зміна кольору тексту при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
 }
 
 .hero {
@@ -72,7 +67,7 @@ button.sign-up {
 }
 
 .hero h1 span {
-    color: #6b20b1;
+    color: #640fbd;
 }
 
 .hero p {
@@ -84,18 +79,28 @@ button.sign-up {
 button.get-started {
     background-color: #fff;
     color: #333;
-    padding: 10px 25px;
-    font-size: 18px;
+    padding: 1% 2%; /* адаптивні відступи */
+    font-size: 1.3vw; /* розмір шрифту в залежності від ширини вікна */
     font-weight: bold;
     border-radius: 30px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     border: none;
     cursor: pointer;
-    margin-bottom: 30px;
+
+    /* Розмір кнопки */
+    width: 15%; /* ширина кнопки у відсотках */
+    max-height: 100px;
+    max-width: 300px; /* максимальна ширина, щоб на великих екранах не була надто великою */
+
+    /* Позиціонування */
+    position: absolute; /* абсолютне позиціонування */
+    top: 50%; /* на 50% від верху */
+    left: 50%; /* на 50% від лівого краю */
+    transform: translate(-50%, -50%); /* щоб вирівняти кнопку по центру */
 }
 
 button.get-started:hover {
-    background-color: #ff00ff;
+    background-color: #640fbd;
     color: #fff;
 }
 /* Hero image size */
