@@ -41,7 +41,6 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s ease, color 0.3s ease;
-    font-style: italic;
 }
 
 /* Hover effect for navigation links */
