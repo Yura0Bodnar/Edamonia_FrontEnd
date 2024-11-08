@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-bot | EdamoniaAI</title>
+    <link rel="stylesheet" href="../static/ai-bot.css">
+    <script defer src="../static/script.js"></script>
+</head>
+<body>
+    <!-- Фонові зірки -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- Ліва панель -->
+    <div class="left-panel">
+        <div class="logo">
+            <span>Edamonia</span> <span class="ai-badge">AI</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">Datasets</a>
+            <a href="#" class="nav-item">Prediction</a>
+            <a href="#" class="nav-item active">AI-bot</a>
+            <a href="#" class="nav-item">For whom</a>
+            <a href="#" class="nav-item">About us</a>
+        </nav>
+    </div>
+
+    <!-- Основний контент -->
+    <div class="main-content">
+        <header class="chat-header">
+            <h1>AI-bot</h1>
+            <button class="new-chat-button">+ New chat</button>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-window">
+                <div class="chat-messages" id="chat-messages">
+                    <p><strong>AI-bot:</strong> <span id="typing">...</span></p>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Send message ..." id="user-input">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+
+            <div class="chat-list">
+                <h3>Chat lists</h3>
+                <div class="chat-item">Chat 1 <span class="chat-options">...</span></div>
+                <div class="chat-item">Chat 2 <span class="chat-options">...</span></div>
+                <div class="chat-item">Chat 3 <span class="chat-options">...</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

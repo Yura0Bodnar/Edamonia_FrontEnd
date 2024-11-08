@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EdamoniaAI</title>
-    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="../static/style.css">
+    <script>
+        // Функція для перенаправлення на потрібну сторінку
+        function navigateToBot() {
+            window.location.href = "./ai-bot.html"; // Заміни на потрібний URL
+        }
+    </script>
 </head>
 <body>
-    <!-- Header section containing logo and navigation links -->
     <header>
         <div class="logo">EdamoniaAI</div>
         <nav>
-            <!-- Navigation links for different sections of the site -->
             <a href="#" class="ai-bot-button">AI-bot</a>
             <a href="#"><strong>Про нас</strong></a>
             <a href="#"><strong>Для кого</strong></a>
@@ -20,17 +23,15 @@
         </nav>
     </header>
 
-    <!-- Main section with a hero banner -->
     <main>
         <section class="hero">
-            <!-- Left side with Image -->
-            <img src="../static/images/rb_717.png" alt="Illustration" class="hero-image">
+            <img src="../static/images/rb_717.png" alt="Ілюстрація" class="hero-image">
 
-            <!-- Right side with text -->
             <div class="hero-content">
-                <h1>Want anything to be easy with <span>EdamoniaAI.</span></h1>
+                <h1>Хочеш, щоб усе було простим із <span>EdamoniaAI.</span></h1>
                 <p>Аналітика продажів та закупівель для ефективних рішень</p>
-                <button class="get-started">Get Started</button>
+                <!-- Додано подію onClick для кнопки -->
+                <button class="get-started" onclick="navigateToBot()">Get Started</button>
             </div>
         </section>
     </main>
