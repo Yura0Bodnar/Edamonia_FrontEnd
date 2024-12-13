@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body font and background */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3e8ff;
+    color: #333;
+}
+
+/* Header layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keeps the header fixed at the top */
+    top: 0;
+    z-index: 1000;
+
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #640fbd;
+}
+
+/* Navigation link styling */
+nav a {
+    margin: 0 15px;
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-style: italic;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    color: #640fbd;
+    transform: scale(1.1);
+}
+
+/* AI bot button styling */
+.ai-bot-button {
+    color: #640fbd;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #f3e8ff;
+    border: 2px solid #640fbd;
+}
+
+/* Hover effect for AI bot button */
+.ai-bot-button:hover {
+    background-color: #640fbd;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Hero section layout */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 40px;
+    max-width: 1200px; /* Restricts the maximum width for better readability */
+    margin: auto;
+}
+
+/* Hero image styling */
+.hero-image {
+    flex: 1;
+    max-width: 480px;
+    margin-right: 20px;
+    box-shadow: 0px 10px 20px rgba(200, 15, 189, 0.2); /* Adds a shadow to the image */
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for hero image */
+.hero-image:hover {
+    box-shadow: 0px 15px 25px rgba(150, 20, 189, 0.4);
+    transform: scale(1.05);
+}
+
+.hero-content {
+    flex: 1;
+    text-align: center; /* Центрування тексту */
+    color: #333;
+    max-width: 600px; /* Максимальна ширина для текстового блоку */
+    padding: 20px;
+    margin: auto; /* Центрування секції */
+}
+
+.hero-content h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 span {
+    color: #640fbd;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(100, 15, 189, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    font-weight: 300;
+    font-style: italic;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+}
+
+/* Get Started button */
+button.get-started {
+    background-color: #640fbd;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(100, 15, 189, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Відступ зверху для кнопки */
+}
+
+/* Hover effect for Get Started button */
+button.get-started:hover {
+    background-color: #520ca1;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(100, 15, 189, 0.4);
+}

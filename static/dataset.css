@@ -1,0 +1,208 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(120deg, #2b1055, #7597de);
+    color: white;
+    overflow: hidden;
+}
+
+/* Ліва панель */
+.left-panel {
+    width: 20%;
+    background: linear-gradient(180deg, #1e1e2f, #2b1055);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5);
+}
+
+/* Навігація */
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.nav-item.active {
+    background: #640fbd;
+    color: white;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+
+/* Основний контент */
+.main-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px; /* Додано відступ зверху */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Заголовок */
+.datasets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.datasets-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.dataset-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    background: #640fbd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    background: #520ca1;
+    transform: scale(1.05); /* Зменшено масштабування */
+}
+
+/* Доріжки */
+.dataset-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Більший відступ між доріжками */
+    align-items: center;
+    margin-top: 20px; /* Відступ від заголовка */
+}
+
+.dataset-item {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px; /* Трохи зменшений внутрішній відступ */
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dataset-item:hover {
+    background: rgba(255, 255, 255, 0.25); /* Легший ефект зміни кольору */
+    transform: scale(1.03); /* Зменшено масштабування */
+}
+
+/* Кнопка видалення */
+.delete-dataset {
+    background: none;
+    color: white;
+    font-size: 18px; /* Трохи зменшено розмір */
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-dataset:hover {
+    color: #ff4d4d;
+    transform: scale(1.1); /* Зменшено масштабування */
+}
+
+
+
+/* Логотип */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Прибирає лінію під текстом */
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff; /* Білий колір тексту */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тінь для тексту */
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Тінь для тексту бейджа */
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5); /* Тінь для самого бейджа */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ефекти при наведенні */
+.logo a:hover .logo-text, .logo a:hover .ai-badge {
+    transform: scale(1.1); /* Легке збільшення */
+    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8); /* Посилена тінь */
+}

@@ -1,0 +1,312 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(120deg, #2b1055, #7597de);
+    color: white;
+    overflow: hidden;
+}
+
+/* Ліва панель */
+.left-panel {
+    width: 20%;
+    background: linear-gradient(180deg, #1e1e2f, #2b1055);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-left: 8px;
+    text-shadow: 0 0 8px rgba(100, 15, 189, 0.8);
+}
+
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-item.active {
+    background: #640fbd;
+    color: white;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+
+/* Основний контент */
+.main-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Заголовок чату */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chat-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.new-chat-button {
+    padding: 12px 25px;
+    background: #640fbd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.new-chat-button:hover {
+    background: #520ca1;
+    transform: scale(1.1);
+}
+
+/* Контейнер чату */
+.chat-container {
+    display: flex;
+    height: calc(100% - 80px);
+    gap: 20px;
+}
+
+.chat-window {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.chat-messages p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background: #640fbd;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+    background: #520ca1;
+}
+
+/* Список чатів */
+.chat-list {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.chat-list h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.chat-item {
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.chat-item:hover {
+    background: #640fbd;
+    color: white;
+    transform: scale(1.05);
+}
+
+.chat-item.active {
+    background: #640fbd;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+
+.chat-options {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stars, .stars2, .stars3 {
+    animation: moveStars 50s linear infinite;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .left-panel {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .chat-list {
+        margin-top: 20px;
+    }
+}
+
+
+
+
+/* Логотип */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Прибирає лінію під текстом */
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff; /* Білий колір тексту */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тінь для тексту */
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Тінь для тексту бейджа */
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5); /* Тінь для самого бейджа */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ефекти при наведенні */
+.logo a:hover .logo-text, .logo a:hover .ai-badge {
+    transform: scale(1.1); /* Легке збільшення */
+    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8); /* Посилена тінь */
+}
