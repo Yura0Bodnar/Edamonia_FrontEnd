@@ -4,36 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EdamoniaAI</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        /* Загальні стилі */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1a1a2e, #16213e);
+            color: white;
+        }
+
+        /* Падаючі зірки */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Основний контейнер */
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Анімація заголовка */
+        h1 {
+            font-size: 4rem;
+            background: linear-gradient(90deg, #ffffff, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnimation 7s infinite, textBlink 1.5s infinite;
+            margin: 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Описовий текст */
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+
+        /* Кнопка */
+        .get-started {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .get-started:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+
+    <div class="container">
+        <h1>Welcome to <span>EdamoniaAI</span></h1>
+        <p>Transforming your business with futuristic AI solutions.</p>
+        <button class="get-started" onclick="navigateToBot()">Get Started</button>
+    </div>
+
     <script>
-        // Функція для перенаправлення на потрібну сторінку
+        // Падаючі зірки
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let stars = [];
+        const STAR_COUNT = 100;
+
+        // Створення зірок
+        class Star {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speed = Math.random() * 1.5 + 0.3;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.fill();
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = -Math.random() * canvas.height / 2;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+        }
+
+        // Ініціалізація зірок
+        function initStars() {
+            for (let i = 0; i < STAR_COUNT; i++) {
+                stars.push(new Star());
+            }
+        }
+
+        // Анімація
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        initStars();
+        animateStars();
+
+        // Функція для переходу до AI-bot
         function navigateToBot() {
             window.location.href = "./ai-bot.html";
         }
     </script>
-</head>
-<body>
-    <header>
-        <div class="logo">EdamoniaAI</div>
-        <nav>
-            <a href="#" class="ai-bot-button">AI-bot</a>
-            <a href="#"><strong>Про нас</strong></a>
-            <a href="#"><strong>Для кого</strong></a>
-            <a href="#"><strong>Контакти</strong></a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <img src="../static/images/rb_717.png" alt="Ілюстрація" class="hero-image">
-
-            <div class="hero-content">
-                <h1>Хочеш, щоб усе було простим із <span>EdamoniaAI.</span></h1>
-                <p>Аналітика продажів та закупівель для ефективних рішень</p>
-                <!-- Додано подію onClick для кнопки -->
-                <button class="get-started" onclick="navigateToBot()">Get Started</button>
-            </div>
-        </section>
-    </main>
 </body>
 </html>
