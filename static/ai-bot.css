@@ -274,19 +274,8 @@ body {
     }
 }
 
-/* Логотип */
-.logo a {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff; /* Білий колір тексту */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тінь для логотипа */
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Відступ між текстом і бейджем AI */
-    text-decoration: none; /* Забирає лінію під текстом */
-}
+
+
 
 /* Логотип */
 .logo a {
@@ -321,4 +310,3 @@ body {
     transform: scale(1.1); /* Легке збільшення */
     box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8); /* Посилена тінь */
 }
-
