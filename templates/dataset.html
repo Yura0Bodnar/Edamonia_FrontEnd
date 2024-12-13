@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datasets | EdamoniaAI</title>
+    <link rel="stylesheet" href="../static/dataset.css">
+    <script defer src="../static/script.js"></script>
+</head>
+<body>
+    <!-- Фонові зірки -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- Ліва панель -->
+    <div class="left-panel">
+        <!-- Логотип -->
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-text">Edamonia</span>
+                <span class="ai-badge">AI</span>
+            </a>
+        </div>
+
+        <!-- Меню навігації -->
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">Datasets</a>
+            <a href="#" class="nav-item">Prediction</a>
+            <a href="ai-bot.html" class="nav-item">AI-bot</a>
+            <a href="#" class="nav-item">For whom</a>
+            <a href="#" class="nav-item">About us</a>
+        </nav>
+    </div>
+
+    <!-- Основний контент -->
+    <div class="main-content">
+        <header class="datasets-header">
+            <h1>Datasets</h1>
+            <div class="dataset-buttons">
+                <button class="btn upload-dataset" id="upload-dataset-btn">+ Upload dataset</button>
+                <button class="btn upload-ai-dataset" id="upload-ai-dataset-btn">+ Upload for AI-bot</button>
+            </div>
+        </header>
+
+        <!-- Контейнер для датасетів -->
+        <div class="dataset-container">
+            <div class="dataset-item">Dataset 1 <button class="btn delete-dataset">&#128465;</button></div>
+            <div class="dataset-item">Dataset 2 <button class="btn delete-dataset">&#128465;</button></div>
+            <div class="dataset-item">Dataset 3 <button class="btn delete-dataset">&#128465;</button></div>
+        </div>
+
+        <!-- Прихований інпут для вибору файлів -->
+        <input type="file" id="file-upload-input" style="display: none;" />
+    </div>
+</body>
+</html>

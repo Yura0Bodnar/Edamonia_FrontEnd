@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Елемент для анімації друку
     const typingElement = document.getElementById('typing');
     const messages = [
         "Привіт! Як я можу допомогти вам сьогодні?",
@@ -9,8 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let messageIndex = 0;
 
     function typeMessage() {
+        if (!typingElement) {
+            console.error("Елемент 'typing' не знайдено.");
+            return;
+        }
+
         if (messageIndex < messages.length) {
-            let currentMessage = messages[messageIndex];
+            const currentMessage = messages[messageIndex];
             let charIndex = 0;
 
             const typingInterval = setInterval(() => {
@@ -24,17 +30,48 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }, 100);
         } else {
-            typingElement.textContent = ""; // Завершення друку
+            typingElement.textContent = "Чекаю ваших питань..."; // Завершення друку
         }
     }
 
+    // Запуск анімації друку
     typeMessage();
 
     // Подія для активного елемента в списку чатів
-    document.querySelectorAll('.chat-item').forEach(item => {
+    const chatItems = document.querySelectorAll('.chat-item');
+    chatItems.forEach(item => {
         item.addEventListener('click', () => {
-            document.querySelectorAll('.chat-item').forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+            chatItems.forEach(i => i.classList.remove('active')); // Знімаємо активний клас
+            item.classList.add('active'); // Додаємо активний клас до натиснутого елемента
         });
+    });
+
+    // Елементи для завантаження файлів
+    const uploadDatasetBtn = document.getElementById("upload-dataset-btn");
+    const uploadAiDatasetBtn = document.getElementById("upload-ai-dataset-btn");
+    const fileUploadInput = document.getElementById("file-upload-input");
+
+    // Перевірка наявності елементів
+    if (!uploadDatasetBtn || !uploadAiDatasetBtn || !fileUploadInput) {
+        console.error("Елементи для завантаження файлів не знайдено.");
+        return;
+    }
+
+    // Додавання обробників подій для кнопок
+    uploadDatasetBtn.addEventListener("click", () => {
+        fileUploadInput.click(); // Відкриває файловий провідник
+    });
+
+    uploadAiDatasetBtn.addEventListener("click", () => {
+        fileUploadInput.click(); // Відкриває файловий провідник
+    });
+
+    // Обробка вибору файлу
+    fileUploadInput.addEventListener("change", (event) => {
+        const file = event.target.files[0]; // Отримує вибраний файл
+        if (file) {
+            alert(`Файл обрано: ${file.name}`);
+            // Додайте логіку для завантаження файлу на сервер, якщо потрібно
+        }
     });
 });
