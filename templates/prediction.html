@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction | EdamoniaAI</title>
+    <link rel="stylesheet" href="../static/prediction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="left-panel">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-text">Edamonia</span>
+                <span class="ai-badge">AI</span>
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="dataset.html" class="nav-item">Datasets</a>
+            <a href="prediction.html" class="nav-item active">Prediction</a>
+            <a href="ai-bot.html" class="nav-item">AI-bot</a>
+            <a href="#" class="nav-item">For whom</a>
+            <a href="#" class="nav-item">About us</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Predictions Dashboard</h1>
+            <div class="controls">
+                <div class="control-group">
+                    <label><i class="fas fa-calendar"></i> Time:</label>
+                    <input type="date" id="time" class="input-field">
+                </div>
+
+                <div class="control-group">
+                    <label><i class="fas fa-calendar-alt"></i> Events:</label>
+                    <select id="events" class="input-field">
+                        <option>Select events</option>
+                        <option>Daily event</option>
+                        <option>Holiday</option>
+                        <option>None</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label><i class="fas fa-cogs"></i> Model:</label>
+                    <select id="model" class="input-field">
+                        <option>XGBoost</option>
+                        <option>CatBoost</option>
+                        <option>LightGBM</option>
+                        <option>LinearRegression</option>
+                        <option>DecisionTree</option>
+                    </select>
+                </div>
+                <button class="btn execute-btn" id="executeBtn">Execute</button>
+            </div>
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading... Please wait.</p>
+        </div>
+
+        <div id="success" class="message">
+            <p>✅ Success! Prediction completed without errors.</p>
+            <button class="btn download-btn">Download Table</button>
+        </div>
+
+        <div id="error" class="message">
+            <p>❌ An error occurred during the prediction.</p>
+        </div>
+    </div>
+    <script src="../static/prediction.js"></script>
+</body>
+</html>

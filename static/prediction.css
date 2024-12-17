@@ -1,0 +1,282 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(120deg, #2b1055, #7597de);
+    color: white;
+    overflow: hidden;
+}
+
+/* Ліва панель */
+.left-panel {
+    width: 20%;
+    background: linear-gradient(180deg, #1e1e2f, #2b1055);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(100, 15, 189, 0.8);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo a:hover .logo-text, .logo a:hover .ai-badge {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8);
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Навігація */
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-item.active {
+    background: #640fbd;
+    color: white;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+
+/* Основний контент */
+.main-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+
+/* Футуристичні фільтри */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    width: 70%;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-group label {
+    font-size: 16px;
+    color: #e3e3e3;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Сучасний стиль для select */
+.input-field {
+    appearance: none; /* Прибрати стандартний стиль */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    border: 1px solid #7d33ff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.input-field:hover, .input-field:focus {
+    background: rgba(123, 51, 255, 0.2);
+    border-color: #9b5de5;
+    box-shadow: 0 0 12px rgba(123, 51, 255, 0.5);
+    outline: none;
+}
+
+/* Стиль для опцій */
+.input-field option {
+    background: #2b1055;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.input-field option:hover {
+    background: #640fbd;
+    color: #fff;
+}
+
+/* Додаємо іконку стрілки для select */
+.input-field-container {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.input-field-container::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #9b5de5;
+    font-size: 12px;
+}
+
+
+/* Футуристична кнопка */
+.btn.execute-btn {
+    background: linear-gradient(135deg, #5a0fc7, #7d33ff);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.5), inset 0 0 15px rgba(100, 15, 189, 0.3);
+    transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.btn.execute-btn:hover {
+    background: linear-gradient(135deg, #7d33ff, #5a0fc7);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(100, 15, 189, 0.7), inset 0 0 20px rgba(100, 15, 189, 0.3);
+}
+
+.btn.execute-btn:active {
+    transform: scale(0.95);
+}
+
+/* Блок завантаження */
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.loading .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid #640fbd;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Повідомлення */
+.message {
+    display: none;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Кнопка для завантаження */
+.download-btn {
+    display: block;
+    margin: 30px auto;
+    background: linear-gradient(145deg, #640fbd, #7a33d1);
+    color: #fff;
+    padding: 25px 60px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(123, 51, 209, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(123, 51, 209, 1);
+}
