@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datasets | EdamoniaAI</title>
-    <link rel="stylesheet" href="../static/dataset.css">
-    <script defer src="../static/script.js"></script>
+    <link rel="stylesheet" href="../static/css/dataset.css">
+    <script defer src="../static/js/utils/animation.js"></script>
+    <script defer src="../static/js/api`s/api_dataset_uploading.js"></script>
+    <script defer src="../static/js/api`s/api_get_all_datasets.js"></script>
 </head>
 <body>
+
     <!-- Фонові зірки -->
     <div class="stars"></div>
     <div class="stars2"></div>
@@ -39,7 +42,6 @@
             <h1>Datasets</h1>
             <div class="dataset-buttons">
                 <button class="btn upload-dataset" id="upload-dataset-btn">+ Upload dataset</button>
-                <button class="btn upload-ai-dataset" id="upload-ai-dataset-btn">+ Upload for AI-bot</button>
             </div>
         </header>
 
@@ -47,7 +49,6 @@
         <div class="dataset-container">
             <div class="dataset-item">Dataset 1 <button class="btn delete-dataset">&#128465;</button></div>
             <div class="dataset-item">Dataset 2 <button class="btn delete-dataset">&#128465;</button></div>
-            <div class="dataset-item">Dataset 3 <button class="btn delete-dataset">&#128465;</button></div>
         </div>
 
         <!-- Прихований інпут для вибору файлів -->
