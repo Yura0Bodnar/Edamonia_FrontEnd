@@ -262,7 +262,7 @@ header h1 {
 /* Кнопка для завантаження */
 .download-btn {
     display: block;
-    margin: 30px auto;
+    margin: 10px auto;
     background: linear-gradient(145deg, #640fbd, #7a33d1);
     color: #fff;
     padding: 25px 60px;
@@ -279,4 +279,49 @@ header h1 {
 .download-btn:hover {
     transform: scale(1.2);
     box-shadow: 0 0 30px rgba(123, 51, 209, 1);
+}
+
+
+#results {
+    margin-top: 1px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#results h2 {
+    margin-bottom: 15px;
+    padding: 25px 60px;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#results .blocks-container {
+    display: flex;
+    justify-content: center; /* Блоки будуть розташовані ближче до центру */
+    gap: 160px; /* Збільшити відстань між блоками */
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Вирівнювання по центру сторінки */
+}
+
+#results .block {
+    flex: 1;
+    padding: 10px;
+}
+
+#results .block h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+#results .block p {
+    margin: 5px 0;
+    font-size: 18px;
+    line-height: 1.5;
 }

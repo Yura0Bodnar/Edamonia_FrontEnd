@@ -40,7 +40,7 @@
                         <option>Daily event</option>
                         <option>Holiday</option>
                         <option>None</option>
-                        <option>Promotions</option>
+                        <option>Promotion</option>
                     </select>
                 </div>
 
@@ -66,6 +66,20 @@
         <div id="success" class="message">
             <p>✅ Success! Prediction completed without errors.</p>
             <button class="btn download-btn">Download Table</button>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2>Prediction Results</h2>
+            <div class="blocks-container">
+                <div class="block" id="block1">
+                    <h3>Test Metrics</h3>
+                    <div id="testMetrics"></div>
+                </div>
+                <div class="block" id="block2">
+                    <h3>Parameters and CV Metrics</h3>
+                    <div id="parameters"></div>
+                </div>
+            </div>
         </div>
 
         <div id="error" class="message">
