@@ -6,6 +6,8 @@
     <title>AI-bot | EdamoniaAI</title>
     <link rel="stylesheet" href="../static/css/ai-bot.css">
     <script defer src="../static/js/utils/animation.js"></script>
+    <script defer src="../static/js/api`s/api_ask_bot.js"></script>
+    <script defer src="../static/js/utils/cleaning_chat_history.js"></script>
 </head>
 <body>
 
@@ -42,22 +44,23 @@
 
         <div class="chat-container">
             <div class="chat-window">
-                <div class="chat-messages" id="chat-messages">
-                    <p><strong>AI-bot:</strong> <span id="typing">...</span></p>
+                <div class="chat-messages" id="chat-messages" style="height: 300px; overflow-y: auto;">
                 </div>
                 <div class="chat-input">
                     <input type="text" placeholder="Send message ..." id="user-input">
                     <button id="send-btn">Send</button>
+                    <button id="clear-btn">Clear Chat</button> <!-- Кнопка для очищення чату, ТО ЩО ТИ МАЄШ ДОБАВИТИ -->
                 </div>
             </div>
-
-            <div class="chat-list">
-                <h3>Chat lists</h3>
-                <div class="chat-item">Chat 1 <span class="chat-options">...</span></div>
-                <div class="chat-item">Chat 2 <span class="chat-options">...</span></div>
-                <div class="chat-item">Chat 3 <span class="chat-options">...</span></div>
-            </div>
         </div>
+
+<!--        <div class="chat-list">-->
+<!--            <h3>Chat lists</h3>-->
+<!--            <div class="chat-item">Chat 1 <span class="chat-options">...</span></div>-->
+<!--            <div class="chat-item">Chat 2 <span class="chat-options">...</span></div>-->
+<!--            <div class="chat-item">Chat 3 <span class="chat-options">...</span></div>-->
+<!--        </div>-->
     </div>
+
 </body>
 </html>
