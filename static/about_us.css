@@ -134,9 +134,8 @@ header p {
     gap: 30px;
     margin-top: 20px;
 }
-
 .card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4); /* Темніший фон */
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -152,6 +151,7 @@ header p {
     transform: translateY(-15px) scale(1.05);
     box-shadow: 0 0 20px rgba(100, 15, 189, 0.8), 0 0 30px rgba(100, 15, 189, 0.4);
 }
+
 
 .card h2 {
     font-size: 24px;

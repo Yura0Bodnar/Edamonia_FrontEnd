@@ -325,3 +325,78 @@ header h1 {
     font-size: 18px;
     line-height: 1.5;
 }
+
+#results {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px; /* Закруглені кути */
+    background: rgba(255, 255, 255, 0.1); /* Прозорий фон */
+    backdrop-filter: blur(10px); /* Ефект розмиття */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* М'яка тінь */
+    transition: all 0.5s ease-in-out; /* Плавний ефект */
+    width: 90%; /* Залишає відступи з боків */
+    max-width: 1000px;
+    margin-bottom: 40px; /* Відступ знизу */
+}
+
+#results h2 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6); /* Яскравий ефект підсвітки */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px; /* Закруглені кути для текстового заголовка */
+    background: rgba(255, 255, 255, 0.15); /* Легка прозорість */
+}
+
+#results .blocks-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+#results .block {
+    flex: 1;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Прозорий блок */
+    backdrop-filter: blur(5px); /* Ефект легкого розмиття */
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Тінь для блоків */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+#results .block:hover {
+    transform: scale(1.05); /* Збільшення при наведенні */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Інтенсивніша тінь */
+}
+
+#results .block h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#results .block p {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f0f0f0;
+    text-align: justify;
+}
