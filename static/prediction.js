@@ -55,14 +55,6 @@ document.getElementById("executeBtn").addEventListener("click", async function (
             const responseData = await response.json();
             console.log("Отримано відповідь від сервера:", responseData);
 
-            // Формуємо окремі рядки для параметрів
-            const parametersHtml = `
-                <p>Iterations: ${responseData.parameters.iterations}</p>
-                <p>Learning Rate: ${responseData.parameters.learning_rate}</p>
-                <p>Depth: ${responseData.parameters.depth}</p>
-                <p>MSE (Cross-validation): ${responseData.cv_metrics.mse.toFixed(4)}</p>
-            `;
-
             // Формуємо окремі рядки для метрик
             const testMetricsHtml = `
                 <p>MSE: ${responseData.test_metrics.mse.toFixed(4)}</p>
@@ -71,9 +63,29 @@ document.getElementById("executeBtn").addEventListener("click", async function (
                 <p>R²: ${responseData.test_metrics.r2.toFixed(4)}</p>
             `;
 
+            // Формуємо окремі рядки для параметрів (якщо не LinearRegression)
+            let parametersHtml = "";
+            if (modelInput !== "LinearRegression") {
+                parametersHtml = `
+                    <p>Iterations: ${responseData.parameters.iterations}</p>
+                    <p>Learning Rate: ${responseData.parameters.learning_rate}</p>
+                    <p>Depth: ${responseData.parameters.depth}</p>
+                    <p>MSE (Cross-validation): ${responseData.cv_metrics.mse.toFixed(4)}</p>
+                `;
+            }
+
             // Вставляємо текст у відповідні елементи HTML
-            document.getElementById("parameters").innerHTML = parametersHtml;
             document.getElementById("testMetrics").innerHTML = testMetricsHtml;
+
+            if (modelInput === "LinearRegression") {
+                // Сховати block2 для LinearRegression
+                document.getElementById("block2").style.display = "none";
+            } else {
+                // Показати block2 для інших моделей
+                document.getElementById("parameters").innerHTML = parametersHtml;
+                document.getElementById("block2").style.display = "block";
+            }
+
 
             // Показуємо повідомлення про успіх
             document.getElementById("success").style.display = "block";

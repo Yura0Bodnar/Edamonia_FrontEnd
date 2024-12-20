@@ -346,3 +346,11 @@ header h1 {
     line-height: 1.5;
     color: #e0e0e0;
 }
+
+#testMetrics p {
+    text-align: center;
+}
+
+#parameters p {
+    text-align: center;
+}
