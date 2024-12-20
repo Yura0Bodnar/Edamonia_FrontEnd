@@ -91,7 +91,6 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .new-chat-button {
@@ -273,24 +272,21 @@ body {
     }
 }
 
-
-
-
 /* Логотип */
 .logo a {
     display: flex;
     align-items: center;
-    text-decoration: none; /* Прибирає лінію під текстом */
+    text-decoration: none;
     gap: 10px;
 }
 
 .logo-text {
     font-size: 30px;
     font-weight: bold;
-    color: #ffffff; /* Білий колір тексту */
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тінь для тексту */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .ai-badge {
@@ -299,13 +295,13 @@ body {
     border-radius: 10px;
     padding: 5px 10px;
     font-size: 16px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Тінь для тексту бейджа */
-    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5); /* Тінь для самого бейджа */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Ефекти при наведенні */
 .logo a:hover .logo-text, .logo a:hover .ai-badge {
-    transform: scale(1.1); /* Легке збільшення */
-    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8); /* Посилена тінь */
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8);
 }

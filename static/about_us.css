@@ -1,0 +1,185 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(120deg, #2b1055, #7597de);
+    color: white;
+    overflow: hidden;
+}
+
+
+/* Фонове полотно для зірок */
+#starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* За іншими елементами */
+}
+
+/* Ліва панель */
+.left-panel {
+    width: 20%;
+    background: linear-gradient(180deg, #1e1e2f, #2b1055);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(100, 15, 189, 0.8);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo a:hover .logo-text, .logo a:hover .ai-badge {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(100, 15, 189, 0.8);
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ai-badge {
+    background-color: #640fbd;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    box-shadow: 0px 4px 12px rgba(100, 15, 189, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Навігація */
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-item.active {
+    background: #640fbd;
+    color: white;
+    box-shadow: 0 0 15px rgba(100, 15, 189, 0.8);
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+/* Стилі для основного контенту */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+header h1 {
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #e0e0e0;
+
+}
+
+/* Картки з футуристичним дизайном */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 20px;
+}
+.card {
+    background: rgba(0, 0, 0, 0.4); /* Темніший фон */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 0 20px rgba(100, 15, 189, 0.8), 0 0 30px rgba(100, 15, 189, 0.4);
+}
+
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #b882ff;
+    text-shadow: 0 0 10px rgba(100, 15, 189, 0.6);
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.divider {
+    margin: 50px auto;
+    height: 2px;
+    width: 60%;
+    background: linear-gradient(90deg, transparent, #b882ff, transparent);
+    box-shadow: 0 0 10px rgba(184, 130, 255, 0.8);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.neon-dot {
+    width: 15px;
+    height: 15px;
+    background: #b882ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #b882ff, 0 0 30px #8b5cf6;
+    animation: pulseDot 1.5s infinite alternate;
+    margin: 20px auto;
+}
