@@ -64,28 +64,27 @@
         </div>
 
         <div id="success" class="message">
-            <p>✅ Success! Prediction completed.</p>
+            <p>✅ Success! Prediction completed without errors.</p>
             <button class="btn download-btn">Download Table</button>
         </div>
 
         <div id="results" style="display: none;">
-    <h2>Prediction Results</h2>
-    <div class="blocks-container">
-        <div class="block" id="block1">
-            <h3>Test Metrics</h3>
-            <div id="testMetrics"></div>
+            <h2>Prediction Results</h2>
+            <div class="blocks-container">
+                <div class="block" id="block1">
+                    <h3>Test Metrics</h3>
+                    <div id="testMetrics"></div>
+                </div>
+                <div class="block" id="block2">
+                    <h3>Parameters and CV Metrics</h3>
+                    <div id="parameters"></div>
+                </div>
+            </div>
         </div>
-        <div class="block" id="block2">
-            <h3>Parameters and CV Metrics</h3>
-            <div id="parameters"></div>
-        </div>
-    </div>
-</div>
 
         <div id="error" class="message">
             <p>❌ An error occurred during the prediction.</p>
         </div>
-        <div id="frame"></div>
     </div>
     <script src="../static/prediction.js"></script>
 </body>
