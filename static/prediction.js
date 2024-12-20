@@ -1,6 +1,7 @@
 // Глобальна змінна для зберігання значення моделі
 let selectedModel = "";
 
+
 document.getElementById("executeBtn").addEventListener("click", async function () {
     document.getElementById("loading").style.display = "block";
     try {
