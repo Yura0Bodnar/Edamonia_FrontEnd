@@ -29,6 +29,7 @@ document.getElementById("executeBtn").addEventListener("click", async function (
         // Сховати повідомлення про успіх чи помилку
         document.getElementById("success").style.display = "none";
         document.getElementById("error").style.display = "none";
+        document.getElementById("results").style.display = "none";
 
         // Формуємо запит
         const requestData = {
@@ -126,6 +127,21 @@ document.querySelector(".download-btn").addEventListener("click", function () {
 
     // Формуємо URL для завантаження таблиці
     const downloadUrl = `http://localhost:8000/download-result-table?model=${encodeURIComponent(selectedModel)}`;
+    console.log("URL для завантаження таблиці:", downloadUrl);
+
+    // Використовуємо redirect для завантаження файлу
+    window.location.href = downloadUrl;
+});
+
+// Додаємо логіку до кнопки "Download Table"
+document.querySelector(".test_predict-btn").addEventListener("click", function () {
+    if (!selectedModel) {
+        alert("Модель не вибрана. Будь ласка, натисніть 'Execute' перед завантаженням таблиці.");
+        return;
+    }
+
+    // Формуємо URL для завантаження таблиці
+    const downloadUrl = `http://localhost:8000/download-test-results?model=${encodeURIComponent(selectedModel)}`;
     console.log("URL для завантаження таблиці:", downloadUrl);
 
     // Використовуємо redirect для завантаження файлу
