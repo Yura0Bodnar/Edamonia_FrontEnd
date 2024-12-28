@@ -56,34 +56,32 @@ document.getElementById("executeBtn").addEventListener("click", async function (
             console.log("Отримано відповідь від сервера:", responseData);
 
             // Формуємо окремі рядки для метрик
-            const testMetricsHtml = `
+            document.getElementById("testMetrics").innerHTML = `
                 <p>MSE: ${responseData.test_metrics.mse.toFixed(4)}</p>
                 <p>RMSE: ${responseData.test_metrics.rmse.toFixed(4)}</p>
                 <p>MAE: ${responseData.test_metrics.mae.toFixed(4)}</p>
                 <p>R²: ${responseData.test_metrics.r2.toFixed(4)}</p>
             `;
 
-            // Формуємо окремі рядки для параметрів (якщо не LinearRegression)
-            let parametersHtml = "";
-            if (modelInput !== "LinearRegression") {
-                parametersHtml = `
-                    <p>Iterations: ${responseData.parameters.iterations}</p>
-                    <p>Learning Rate: ${responseData.parameters.learning_rate}</p>
-                    <p>Depth: ${responseData.parameters.depth}</p>
-                    <p>MSE (Cross-validation): ${responseData.cv_metrics.mse.toFixed(4)}</p>
-                `;
-            }
-
-            // Вставляємо текст у відповідні елементи HTML
-            document.getElementById("testMetrics").innerHTML = testMetricsHtml;
-
-            if (modelInput === "LinearRegression") {
-                // Сховати block2 для LinearRegression
-                document.getElementById("block2").style.display = "none";
-            } else {
-                // Показати block2 для інших моделей
+            // Динамічне відображення параметрів
+            if (responseData.parameters) {
+                // Якщо параметри існують, формуємо HTML
+                let parametersHtml = "";
+                for (const [key, value] of Object.entries(responseData.parameters)) {
+                    const keyFormatted = key
+                        .replace(/_/g, " ") // Замінюємо підкреслення на пробіли
+                        .replace(/\b\w/g, (char) => char.toUpperCase()); // Робимо першу літеру кожного слова великою
+                    parametersHtml += `<p>${keyFormatted}: ${value}</p>`;
+                }
                 document.getElementById("parameters").innerHTML = parametersHtml;
                 document.getElementById("block2").style.display = "block";
+            } else if (selectedModel === "LinearRegression") {
+                // Якщо це LinearRegression, параметрів немає
+                document.getElementById("parameters").innerHTML = "<p>Параметри відсутні для цієї моделі.</p>";
+                document.getElementById("block2").style.display = "block";
+            } else {
+                // У будь-якому іншому випадку приховуємо block2
+                document.getElementById("block2").style.display = "none";
             }
 
 

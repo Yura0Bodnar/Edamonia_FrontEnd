@@ -4,14 +4,15 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     display: flex;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(120deg, #2b1055, #7597de);
     color: white;
-    overflow: hidden;
 }
 
 /* Ліва панель */
 .left-panel {
+    position: fixed;
+    height: 100vh;
     width: 20%;
     background: linear-gradient(180deg, #1e1e2f, #2b1055);
     display: flex;
@@ -19,6 +20,7 @@ body {
     align-items: center;
     padding: 20px;
     box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .logo {
@@ -93,6 +95,7 @@ body {
 /* Основний контент */
 .main-content {
     width: 80%;
+    margin-left: 20%;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -100,6 +103,11 @@ body {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+    min-height: 100vh; /* Мінімальна висота для покриття видимої області */
+    height: 100%; /* Висота залежить від контенту, але не менше 100vh */
+    box-sizing: border-box; /* Враховує padding у загальній висоті */
 }
 
 header {
@@ -282,6 +290,9 @@ header h1 {
 
 
 #results {
+    width: 97%;
+    margin-left: 3%;
+    box-sizing: border-box;
     margin-top: 20px;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
@@ -309,8 +320,7 @@ header h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;
-    max-width: 800px;
+    width: 80%;
     margin: 20px auto;
 }
 
@@ -353,4 +363,26 @@ header h1 {
 
 #parameters p {
     text-align: center;
+}
+
+/* Кнопка для завантаження */
+.test_predict-btn {
+    display: block;
+    margin: 10px auto;
+    background: linear-gradient(145deg, #640fbd, #7a33d1);
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(123, 51, 209, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.test_predict-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(123, 51, 209, 1);
 }
