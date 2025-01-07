@@ -85,6 +85,51 @@ document.getElementById("executeBtn").addEventListener("click", async function (
                 document.getElementById("block2").style.display = "none";
             }
 
+            // Викликаємо ендпоінт для завантаження файлу з сервера
+            try {
+                const fileName = `${modelInput}.csv`; // Формуємо назву файлу
+                console.log("Формуємо запит до /files для завантаження файлу:", fileName);
+
+                // Отримуємо файл із сервера
+                const fileResponse = await fetch(`http://localhost:8000/files/${fileName}`);
+                if (!fileResponse.ok) {
+                    throw new Error(`Не вдалося завантажити файл: ${fileName}`);
+                }
+                const fileBlob = await fileResponse.blob(); // Завантажуємо файл як Blob
+                const file = new File([fileBlob], fileName, { type: "text/csv" }); // Створюємо об'єкт File
+
+                console.log("Файл успішно завантажено:", fileName);
+
+                // Формуємо дані форми для запиту
+                const formData = new FormData();
+                formData.append("files", file); // Додаємо файл у форму
+
+                // Викликаємо ендпоінт для обробки файлу
+                try {
+                    console.log("Формуємо запит до /process-file для обробки файлу:", fileName);
+
+                    const processFileResponse = await fetch("http://localhost:8000/process-file/", {
+                        method: "POST",
+                        body: formData, // Передаємо FormData
+                    });
+
+                    if (processFileResponse.ok) {
+                        const processFileData = await processFileResponse.json();
+                        console.log("Ендпоінт /process-file виконаний успішно.");
+                        console.log("Дані від /process-file:", processFileData);
+                    } else {
+                        const errorData = await processFileResponse.json();
+                        console.error("Помилка при виконанні /process-file:", errorData);
+                        document.getElementById("error").style.display = "block";
+                    }
+                } catch (error) {
+                    console.error("Сталася помилка при виконанні /process-file:", error);
+                    document.getElementById("error").style.display = "block";
+                }
+            } catch (error) {
+                console.error("Сталася помилка при завантаженні файлу з /files:", error);
+                document.getElementById("error").style.display = "block";
+            }
 
             // Показуємо повідомлення про успіх
             document.getElementById("success").style.display = "block";
